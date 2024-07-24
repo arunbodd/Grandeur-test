@@ -4,7 +4,7 @@ process fastani {
   stageInMode   "copy"
   publishDir    path: params.outdir, mode: 'copy', pattern: 'logs/*/*log'
   publishDir    path: params.outdir, mode: 'copy', pattern: 'fastani/*' 
-  container     'staphb/fastani:1.34'
+  container     'staphb/fastani:latest'
   time          '10m'
   errorStrategy { task.attempt < 2 ? 'retry' : 'ignore'}
   
