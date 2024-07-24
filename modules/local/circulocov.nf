@@ -5,7 +5,7 @@ process circulocov {
   publishDir    path: params.outdir, mode: 'copy', pattern: 'logs/*/*log'
   publishDir    path: params.outdir, mode: 'copy', pattern: 'circulocov/*'
   publishDir    path: params.outdir, mode: 'copy', pattern: 'circulocov/*/*'
-  container     'staphb/circulocov:0.1.20240104'
+  container     'staphb/circulocov:latest'
   time          '30m'
   errorStrategy { task.attempt < 2 ? 'retry' : 'ignore'}
   

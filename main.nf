@@ -94,44 +94,6 @@ params.aligner              = 'panaroo'
 
 // ##### ##### ##### ##### ##### ##### ##### ##### ##### #####
 
-def paramCheck(keys) {
-  set_keys = [
-    "outdir",
-    "fastas",
-    "msa",
-    "kraken2_db",
-    "mash_db",
-    "config_file",
-    "reads",
-    "sample_sheet",
-    "fasta_list",
-    "blast_db",
-    "blast_db_type",
-    "fastani_ref",
-    "fastani_ref_list",
-    "iqtree2_outgroup",
-    "genome_sizes",
-    "sra_accessions",
-    "minimum_reads",
-    "datasets_max_genomes",
-    "mash_max_hits",
-    "min_core_genes",
-    "current_datasets",
-    "skip_extras",
-    "exclude_top_hit",
-    "aligner"]
-
-  for(key in keys){
-    if (key !in set_keys){
-      println("FATAL: ${key} isn't a supported param!")
-      println("Supported params: ${set_keys}")
-      exit 1
-    }
-  }
-}
-
-paramCheck(params.keySet())
-
 // ##### ##### ##### ##### ##### ##### ##### ##### ##### #####
 
 // Sharing params with subworkflows
